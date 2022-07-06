@@ -1,0 +1,105 @@
+The type of graph we created is a weighted directed graph.
+
+Assumptions we considered :
+1.We took the value of infinity to be 123456.
+2.The maximum length of the road is 50km.
+3.The average speed of the car will be 60km/hr.
+4.If the no of the cars on the road is between 1 to 80 then we assumed that average speed of the car to be 20-60km/hr. 
+5.When cars are greater than 80 the speed of the car we taken is 20km/hr.
+6.We made a function called CalTime that calculates the time to move through a road as a function of number of cars.
+7.We considered roads as edges and number of cars and length of the road as weights of the edges.
+
+
+Data Structures used in our project :
+1.Stack :
+We used stacks in the implementation of Dijkstra's algoritm to print the shortest length path and the shortest time path.
+
+
+2.Heaps (Priority queues) : 
+We are using priority queue in our code to implement the Dijkstra's algorithm more efficiently.
+
+
+The functions that include priority queue are the following :
+a)ExtractMin
+This function returns the minimum node on the basis of weight (weight here means time taken to pass through the road or the length of the road 
+as we are implementing dijkstra's algorithm to fing the shortest lenght path as well as shorest time path)and it removes it from the heap.
+
+b)DecreaseKey
+This function actually updates the decreased value of the weight of a particular vertex.
+
+c)print_head
+It is a utility function.
+It prints all the nodes in the heap.
+
+d) MinHeapify
+It creates a minimum heap on the basis of weights.
+  
+e)DeleteHeap
+It clears the memory in the heap.
+
+
+3.Adjacency List
+To represent our graph we have used adjacency list.
+
+Adjacency list it could be called as array of linked lists.
+
+The index of the array plus 1 represents a vertex and each element in its linked list represents the other vertices with which it forms an edge and the 
+ weight of each edge will also be stored accordingly.
+   
+
+
+We also included UpdateDis,UpdateCars using which we can change the weights of the graph if needed.
+Algorithms used :
+1.Dijkstra Algorithm
+
+Dijkstra algorithm allows us to find the shortest length path and the shortest time path as it is most efficient algorithm to calculate.
+Dijkstra’s Algorithm has effectively used  in Map applications, for finding the locations of the detination and path.
+
+
+Time complexity :
+For the implementation of the Dijkstra Algorithm we are using priority queues so the time complexity will be O(|V|log|V| + |E|log|V|).
+Where |E| denotes the number of edges, |V| denotes the number of vertices.
+
+2.Safe algorithm :
+
+We implemented this to check the safest path according to past 5 days data.
+
+We first checked the fluctuations of the data for every edge of last 5 days for that we used a function called TimeAccToFluc so for any of the 5 days 
+fluctuation = (|average time of the 5 days - time on that day|/(time on that day))*100, if the fluctuation exceeds 25% then we assumed that taking that
+edge is not safe so we make the time taken to cross that road equal to infinity or in simpler words we assumed that edge doesn't exists.
+
+If we are not able to find the safest path using the above method then we apply Dijkstra algorithm on average time basis here we don't consider what the 
+fluctuations are for the last 5 days.
+
+Using safe algorithm if there exists a path then it prints
+a)The total time taken.
+b)Path followed
+c)Time taken for the last 5 days for the same path.
+
+Time complexity :
+To check whether time is fluctuating or not time complexity will be O(5) where 5 are the number of days.
+
+For each edge it will be O(|E|*5)
+To update the value in the list it will be O(|E|*5).
+For the Dijkstra's algoritm it will be O((|E|+|V|)log|V|).
+For storing path it will be O(|V|).
+For printing path also it will be O(|V|).
+Get data of the last 5 days for the path found will be O(|V|*|V|).
+
+The Total time complexity will be O(Dijkstra's algorithm) as others can be ignored that is O((|E|+|V|)log|V|).
+The time complexity in the worst case will be O(|V|^2(log|V|)).
+Where |E| denotes the number of edges, |V| denotes the number of vertices.
+
+
+
+We also included a python program that plots a graph of the time taken to reach the destination from the source using the same path for the last 5 days.
+
+
+We succesfully implemented our code to execute the programme as per the requrements of the user. Depending on the output requirements, parameters are 
+designed.Code is drafted to run on the basis of Parameters.Our project is accurate and authentic, when compared to other applications,because it gives 
+shortest time/distance & safest path to destination.This programm is versatile and unique, as it used the algorthim for finding the safest path.
+
+
+We sincerly thank Tanish sir for the excellent guidiance through out our project...
+
+
