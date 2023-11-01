@@ -28,7 +28,7 @@ for seeing our report click on analysis.txt
 ***
 |Serial no|Roll number  | NAME           | 
 |-----    |------       |------          |
-|   1     |2020100001   |Parshva Bhadra  | 
+|   1     |2020101001   |Parshva Bhadra  | 
 |   2     |2020101052   |Aditya Malhotra |  
 |   3     |2020102052   |Karnati Jahnavi |
 |   4     |2020112012   |Anubhav Pal     |
